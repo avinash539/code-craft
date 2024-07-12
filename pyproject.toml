@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "codecraft"
+version = "0.1.0"
+description = "Make developers life easy"
+authors = ["Avinash Singh <avinashsingh539@gmail.com>"]
+license = "Open Source"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
