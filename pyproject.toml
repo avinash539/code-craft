@@ -3,8 +3,9 @@ name = "codecraft"
 version = "0.1.0"
 description = "Make developers life easy"
 authors = ["Avinash Singh <avinashsingh539@gmail.com>"]
-license = "Open Source"
+license = "MIT"
 readme = "README.md"
+packages = [{include = "codecraft"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -14,3 +15,6 @@ click = "^8.1.7"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+craft = "codecraft.codecraft:cli"

@@ -1,0 +1,102 @@
+{
+  "project_structure": {
+    "directories": [
+      "src/{project_name}/v1/core/abstracts",
+      "src/{project_name}/v1/core/repositories",
+      "src/{project_name}/v1/core/configs",
+      "src/{project_name}/v1/core/enums",
+      "src/{project_name}/v1/core/constants",
+      "src/{project_name}/v1/core/utils",
+      "src/{project_name}/v1/frameworks/database",
+      "src/{project_name}/v1/frameworks/telemetry",
+      "src/{project_name}/v1/services"
+    ],
+    "files": [
+      {
+        "path": "src/{project_name}/v1/core/abstracts/__init__.py",
+        "content": ""
+      },
+      {
+        "path": "src/{project_name}/v1/core/repositories/__init__.py",
+        "content": ""
+      },
+      {
+        "path": "src/{project_name}/v1/core/configs/__init__.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/core/enums/__init__.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/core/constants/__init__.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/core/utils/__init__.py", "content": "" },
+      { "path": "src/{project_name}/v1/core/logger.py", "content": "" },
+      { "path": "src/{project_name}/v1/core/middlerwares.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/core/exception_handlers.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/frameworks/__init__.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/frameworks/database/__init__.py",
+        "content": ""
+      },
+      {
+        "path": "src/{project_name}/v1/frameworks/telemetry/__init__.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/services/__init__.py", "content": "" },
+      { "path": "src/{project_name}/v1/controller.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/main.py",
+        "content": "import { NestFactory } from '@nestjs/core';\nimport { AppModule } from './app/app.module';\nasync function bootstrap() {\n  const app = await NestFactory.create(AppModule);\n  await app.listen(3000);\n}\nbootstrap();"
+      },
+      {
+        "path": "src/{project_name}/v1/app/app.module.ts",
+        "content": "import { Module } from '@nestjs/common';\nimport { AppController } from './app.controller';\nimport { AppService } from './app.service';\n@Module({\n  imports: [],\n  controllers: [AppController],\n  providers: [AppService],\n})\nexport class AppModule {}"
+      },
+      {
+        "path": "src/{project_name}/v1/app/app.controller.ts",
+        "content": "import { Controller, Get } from '@nestjs/common';\n@Controller()\nexport class AppController {\n  @Get()\n  async getHello(): Promise<string> {\n    return 'Hello World!';\n  }\n}"
+      },
+      {
+        "path": "src/{project_name}/v1/app/app.service.ts",
+        "content": "import { Injectable } from '@nestjs.common';\n@Injectable()\nexport class AppService {\n  async getHello(): Promise<string> {\n    return 'Hello World!';\n  }\n}"
+      },
+      {
+        "path": "src/{project_name}/v1/app/users/users.module.ts",
+        "content": "import { Module } from '@nestjs.common';\nimport { UsersController } from './users.controller';\nimport { UsersService } from './users.service';\n@Module({\n  imports: [],\n  controllers: [UsersController],\n  providers: [UsersService],\n})\nexport class UsersModule {}"
+      },
+      {
+        "path": "src/{project_name}/v1/app/users/users.controller.ts",
+        "content": "import { Controller, Get } from '@nestjs.common';\n@Controller('users')\nexport class UsersController {\n  @Get()\n  async getUsers(): Promise<string> {\n    return 'Users!';\n  }\n}"
+      },
+      {
+        "path": "src/{project_name}/v1/app/users/users.service.ts",
+        "content": "import { Injectable } from '@nestjs.common';\n@Injectable()\nexport class UsersService {\n  async getUsers(): Promise<string> {\n    return 'Users!';\n  }\n}"
+      },
+      {
+        "path": "package.json",
+        "content": "{\"name\": \"{{project_name}}\", \"version\": \"1.0.0\", \"description\": \"\", \"main\": \"src/main.ts\", \"scripts\": {\"start\": \"nest start\"}, \"keywords\": [], \"author\": \"\", \"license\": \"MIT\"}"
+      }
+    ]
+  },
+  "modules": {
+    "database": {
+      "mongodb": {
+        "pymongo": "database_modules/mongodb/pymongo",
+        "motor": "database_modules/mongodb/motor",
+        "mongoose": "database_modules/mongodb/mongoose"
+      },
+      "SQL": {
+        // Add SQL drivers here
+      }
+    },
+    "service": {
+      "files": ["service.py", "factory.py", "constant.py", "abstract.py"]
+    },
+    "repository": {
+      "files": ["repository.py", "model.py", "schema.py"]
+    }
+  }
+}

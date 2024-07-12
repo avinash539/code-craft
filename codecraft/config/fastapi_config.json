@@ -1,0 +1,72 @@
+{
+  "project_structure": {
+    "directories": [
+      "src/{project_name}/v1/core/abstracts",
+      "src/{project_name}/v1/core/repositories",
+      "src/{project_name}/v1/core/configs",
+      "src/{project_name}/v1/core/enums",
+      "src/{project_name}/v1/core/constants",
+      "src/{project_name}/v1/core/utils",
+      "src/{project_name}/v1/frameworks/database",
+      "src/{project_name}/v1/frameworks/telemetry",
+      "src/{project_name}/v1/services"
+    ],
+    "files": [
+      {
+        "path": "src/{project_name}/v1/core/abstracts/__init__.py",
+        "content": ""
+      },
+      {
+        "path": "src/{project_name}/v1/core/repositories/__init__.py",
+        "content": ""
+      },
+      {
+        "path": "src/{project_name}/v1/core/configs/__init__.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/core/enums/__init__.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/core/constants/__init__.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/core/utils/__init__.py", "content": "" },
+      { "path": "src/{project_name}/v1/core/logger.py", "content": "" },
+      { "path": "src/{project_name}/v1/core/middlerwares.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/core/exception_handlers.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/frameworks/__init__.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/frameworks/database/__init__.py",
+        "content": ""
+      },
+      {
+        "path": "src/{project_name}/v1/frameworks/telemetry/__init__.py",
+        "content": ""
+      },
+      { "path": "src/{project_name}/v1/services/__init__.py", "content": "" },
+      { "path": "src/{project_name}/v1/controller.py", "content": "" },
+      {
+        "path": "src/{project_name}/v1/main.py",
+        "content": "from fastapi import FastAPI\napp = FastAPI()"
+      },
+      { "path": "requirements.txt", "content": "fastapi\nuvicorn" }
+    ]
+  },
+  "modules": {
+    "database": {
+      "mongodb": {
+        "pymongo": "database_modules/mongodb/pymongo",
+        "motor": "database_modules/mongodb/motor",
+        "mongoose": "database_modules/mongodb/mongoose"
+      }
+    },
+    "service": {
+      "files": ["service.py", "factory.py", "constant.py", "abstract.py"]
+    },
+    "repository": {
+      "files": ["repository.py", "model.py", "schema.py"]
+    }
+  }
+}
